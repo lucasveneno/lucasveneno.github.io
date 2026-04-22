@@ -62,7 +62,9 @@ async function getPinnedRepos() {
       console.error('GraphQL Errors:', errors);
       return [];
     }
-    return data?.user?.pinnedItems?.nodes || [];
+    const repos = data?.user?.pinnedItems?.nodes || [];
+    console.log(`Successfully fetched ${repos.length} pinned repositories for ${username}`);
+    return repos;
   } catch (e) {
     console.error('Failed to fetch pinned repos:', e);
     return [];
