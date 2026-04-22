@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 
 // Check both import.meta.env (Vite) and process.env (Node)
 const GITHUB_TOKEN = import.meta.env.GH_TOKEN || process.env.GH_TOKEN ||  import.meta.env.GITHUB_TOKEN || process.env.GITHUB_TOKEN || import.meta.env.VITE_GITHUB_TOKEN || process.env.VITE_GITHUB_TOKEN;
-const username = 'lucasveneno';
+const username = 'lucasveneno'; // For the public API call
 
 async function getPinnedRepos() {
   if (!GITHUB_TOKEN) {
