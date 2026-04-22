@@ -1,13 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Use a Personal Access Token (PAT) with read:user and repo scope
-const GH_TOKEN = import.meta.env.GH_TOKEN;
+// Check both import.meta.env (Vite) and process.env (Node)
+const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN || process.env.GITHUB_TOKEN || import.meta.env.VITE_GITHUB_TOKEN || process.env.VITE_GITHUB_TOKEN;
 const username = 'lucasveneno';
 
 async function getPinnedRepos() {
-  if (!GH_TOKEN) {
-    console.warn('GH_TOKEN not found. Using fallback data.');
+  if (!GITHUB_TOKEN) {
+    console.warn('GITHUB_TOKEN not found. Using fallback data.');
     return [
       {
         name: 'automation-platform',
@@ -31,7 +31,7 @@ async function getPinnedRepos() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${GH_TOKEN}`,
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
       },
       body: JSON.stringify({
         query: `
