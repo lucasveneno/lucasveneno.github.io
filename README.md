@@ -1,4 +1,4 @@
-# Lucas Coelho — GitHub Portfolio
+# Lucas Coelho - GitHub Portfolio
 
 This is the source code for my GitHub Pages portfolio website, hosted at [lucasveneno.github.io](https://lucasveneno.github.io).
 
