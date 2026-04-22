@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Lucas Coelho (@lucasveneno) — GitHub Portfolio">
+	<main class="container">
+		<header class="flex flex-col items-center text-center mb-16">
+			<div class="w-32 h-32 rounded-full border-2 border-[var(--border)] overflow-hidden mb-6">
+				<img src="https://github.com/lucasveneno.png" alt="Lucas Coelho" class="w-full h-full" />
+			</div>
+			<h1 class="text-3xl font-extrabold text-[var(--text-bold)] mb-2">Lucas Coelho</h1>
+			<p class="text-xl text-[var(--text-muted)] mb-6">@lucasveneno</p>
+			<p class="max-w-xl text-[var(--text-muted)] mb-8">
+				Senior Software Engineer building scalable backend systems, 
+				distributed automation platforms, and premium mobile applications.
+			</p>
+			<div class="flex gap-4">
+				<a href="https://github.com/lucasveneno" class="btn btn-primary">
+					Follow on GitHub
+				</a>
+				<a href="https://lucasveneno.com" class="btn btn-outline">
+					Visit Main Site ↗
+				</a>
+			</div>
+		</header>
+
+		<section class="mb-16">
+			<h2 class="text-xl font-bold text-[var(--text-bold)] mb-6 flex items-center gap-2">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M3 7h6l2 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/>
+				</svg>
+				Pinned Repositories
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<a href="https://github.com/lucasveneno" class="card block no-underline">
+					<h3 class="text-[var(--accent)] font-bold mb-2">automation-platform</h3>
+					<p class="text-sm text-[var(--text-muted)] mb-4">
+						Distributed scraping and automation pipelines built with Puppeteer and Selenium.
+					</p>
+					<div class="flex gap-4 text-xs text-[var(--text-dim)]">
+						<span class="flex items-center gap-1">
+							<span class="w-3 h-3 rounded-full bg-[#4F5D95]"></span> PHP
+						</span>
+						<span>★ 12</span>
+					</div>
+				</a>
+				<a href="https://github.com/lucasveneno" class="card block no-underline">
+					<h3 class="text-[var(--accent)] font-bold mb-2">flutter-story-encoder</h3>
+					<p class="text-sm text-[var(--text-muted)] mb-4">
+						Native video encoding plugin for Flutter using MediaCodec and AVFoundation.
+					</p>
+					<div class="flex gap-4 text-xs text-[var(--text-dim)]">
+						<span class="flex items-center gap-1">
+							<span class="w-3 h-3 rounded-full bg-[#00B4AB]"></span> Dart
+						</span>
+						<span>★ 8</span>
+					</div>
+				</a>
+			</div>
+		</section>
+
+		<section class="mb-16">
+			<h2 class="text-xl font-bold text-[var(--text-bold)] mb-6">Activity</h2>
+			<div class="card p-8 flex flex-col items-center justify-center text-center">
+				<p class="text-[var(--text-muted)] mb-4">Building in public at github.com/lucasveneno</p>
+				<div class="grid grid-cols-7 gap-1">
+					{Array.from({ length: 49 }).map(() => (
+						<div class="w-3 h-3 rounded-sm bg-[var(--border)] opacity-30"></div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<footer class="text-center pt-8 border-t border-[var(--border)]">
+			<p class="text-sm text-[var(--text-dim)]">
+				© {new Date().getFullYear()} Lucas Coelho. Hosted on GitHub Pages.
+			</p>
+		</footer>
+	</main>
+</Layout>
